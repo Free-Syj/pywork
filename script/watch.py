@@ -27,17 +27,22 @@ if __name__ == "__main__":
     commandstr = ""
     for i in range(1, len(sys.argv)):
         print "arg ", i, sys.argv[i]
-        if sys.argv[i] == 1:
+        if sys.argv[i] == '1':
             commandstr = commandstr1
-        elif sys.argv[i] == 2:
+            commandstr += sys.argv[i+1];
+            break;
+        elif sys.argv[i] == '2':
             commandstr = commandstr2
-        elif sys.argv[i] == 3:
+            commandstr += sys.argv[i+1];
+            break;
+        elif sys.argv[i] == '3':
             commandstr = commandstr3
+            commandstr += sys.argv[i+1];
+            break;
         else:
             commandstr = commandstr1
             commandstr += sys.argv[i];
             break;
-        commandstr += sys.argv[i+1];
         # {
         #     1:lambda x: x+=" ",
         # }[sys.argv[i]]()
